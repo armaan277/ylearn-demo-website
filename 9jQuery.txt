@@ -1,0 +1,754 @@
+<!-- Write a Jquery to Change text contents of the elements on button click.  -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Change Text</title>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <p>Hello JavaScript!</p>
+    <button>Click Me!</button>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("p").text("Hello jQuery!");
+            });
+        });
+    </script>
+</body>
+
+</html> -->
+
+<!-- Write a Jquery to Select elements by class name,id and element name. -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Change Text</title>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <h1>Hello Welcome in jQuery</h1>
+    <p id="id1">This is a ID Tag!</p>
+    <p class="class1">This is a CLASS Tag!</p>
+
+    <script>
+        $(document).ready(function () {
+            $("h1").css("background", "red");
+            $("#id1").css("background", "Green");
+            $(".class1").css("background", "blue");
+        });
+    </script>
+</body>
+
+</html> -->
+
+
+<!-- Write a Jquery to show the use of Click(), hover(), on(), trigger(), off() events.  -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>jQuery Events Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #hoverBox {
+            height: 100px;
+            width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: lightgreen;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="hoverBox">Hover Over Me</div>
+    <button id="clickBtn">Click Me</button>
+    <button id="offHoverBtn">Turn Off Hover</button><br /><br />
+
+    <input type="text" value="Select Me" id="textInput" /><br /><br />
+    <button id="triggerBtn">Trigger Select</button>
+
+    <script>
+        $(document).ready(function () {
+            // hover() event - Changes background color on hover
+            $('#hoverBox').hover(
+                function () {
+                    $(this).css('background-color', 'orange');
+                },
+                function () {
+                    $(this).css('background-color', 'lightgreen');
+                }
+            );
+
+            // click() event - Shows an alert when the button is clicked
+            $("#clickBtn").click(function () {
+                alert("Button Clicked!");
+            });
+
+            // off() event - Removes the hover effect when the button is clicked
+            $("#offHoverBtn").click(function () {
+                $('#hoverBox').off('mouseenter mouseleave');
+                alert("Hover event turned off!");
+            });
+
+            // select() event - Adds text when the input field is selected
+            $("#textInput").select(function () {
+                $(this).after("<p>Text selected!</p>");
+            });
+
+            // trigger() event - Manually triggers the select event on the input field
+            $("#triggerBtn").click(function () {
+                $("#textInput").trigger("select");
+            });
+        });
+    </script>
+</body>
+
+</html> -->
+
+
+<!-- Practical 7.b)   -->
+<!-- Aim: jQuery Selectors, jQuery Hide and Show effects.  -->
+<!-- I. Write a Jquery to Create animated show hide effect.  -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide and Show</title>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <p>ALSJ College</p>
+    <button id="btn1">Hide</button>
+    <button id="btn2">Show</button>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("p").hide();
+            });
+
+            $("#btn2").click(function () {
+                $("p").show();
+            });
+        });
+
+    </script>
+</body>
+
+</html> -->
+
+<!-- Write a Jquery to create a simple toggle effect. -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Demonstrate</title>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia reiciendis iure deleniti at in facilis, ad
+        fugiat praesentium tenetur eum quae, voluptatem error perspiciatis dicta obcaecati vitae sit aliquam ipsa.</p>
+    <button>Toggle between hide() and show()</button>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("p").toggle();
+            });
+        });
+    </script>
+</body>
+
+</html> -->
+
+<!-- Write a Jquery to create fade-in and fade-out effect. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fade-In & Fade-Out</title>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <p>ALSJ College</p>
+    <button id="btn1">Fade-In</button>
+    <button id="btn2">Fade-Out</button>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("p").fadeIn();
+            });
+
+            $("#btn2").click(function () {
+                $("p").fadeOut();
+            });
+        });
+    </script>
+</body>
+
+</html> -->
+
+<!-- Write a Jquery to Create fade toggle effect.  -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToggleFade Demonstrate</title>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit deleniti laborum saepe officiis iure
+        error blanditiis dicta. Blanditiis consectetur aperiam vitae nobis, vero officia odio quas, porro adipisci
+        ducimus similique.</p>
+    <button>ToggleFade!!!</button>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("p").fadeToggle();
+            });
+        });
+    </script>
+</body>
+
+</html> -->
+
+<!-- Write a Jquery to Create slide-up and slide-down effect.  -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide-up & slide-down</title>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim perspiciatis ducimus sed incidunt, voluptatem
+        aliquid magnam facilis fugiat, cumque ut esse iure dolor, tempore amet? Voluptatibus doloremque vel mollitia
+        soluta.</p>
+
+    <button id="btn1">slide-up</button>
+    <button id="btn2">slide-down</button>
+
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("p").slideUp();
+            });
+
+            $("#btn2").click(function () {
+                $("p").slideDown();
+            });
+        });
+    </script>
+</body>
+
+</html> -->
+
+<!-- Write a Jquery to Create slide toggle effect.  -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlideToggle</title>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita accusamus non explicabo necessitatibus, a fugit
+        odit voluptas sequi, maxime hic ullam minima rem commodi inventore culpa architecto debitis maiores quasi!</p>
+
+    <button>Slide-Toggle</button>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("p").slideToggle();
+            });
+        });
+    </script>
+</body>
+
+</html> -->
+
+<!-- 8) jQuery Animation effects, jQuery Chaining.  -->
+<!-- Write a Jquery Create animation effect.  -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple CSS Properties.</title>
+    <script src="jquery.js"></script>
+    <style>
+        .box {
+            background-color: plum;
+            border-color: purple;
+            border-style: solid;
+            height: 100px;
+            width: 100px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <button>Start Animation</button>
+    <div class="box"></div>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $(".box").animate({
+                    width: "300px",
+                    height: "300px",
+                    marginLeft: "300px",
+                    borderWidth: "10px",
+                    opacity: 0.5,
+                })
+            });
+        });
+    </script>
+</body>
+
+</html> -->
+
+
+<!-- Write a Jquery to perform Method chaining. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Method Chaining</title>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <p>Welcome to jQuery!!!</p>
+    <button>Click Me!</button>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("p").css("color", "pink").slideUp(2000).slideDown(2000);
+            });
+        });
+    </script>
+</body>
+
+</html> -->
+
+
+<!-- Practical 8.b) 
+Aim: jQuery Callback, jQuery Get and Set Contents. 
+I. Write a Jquery effect method with a callback function.  -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Function</title>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <p>This is a paragraph.</p>
+    <button>Clicke Me!</button>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("p").hide("fast", function () {
+                    alert("The paragraph is now hidden");
+                });
+            });
+        });
+    </script>
+</body>
+
+</html> -->
+
+<!-- Write a Jquery to get and set text contents of the elements.  -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get & Set Contents</title>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <p>This is a paragraph</p>
+    <p>This is another paragraph</p>
+    <button id="btn1">Get all the Paragraph's</button>
+    <p>This is a Test Paragraph</p>
+    <p>This is another Test Paragraph</p>
+    <button id="btn2">Set all the Paragraph's</button>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                var text = $("p").text();
+                alert(text);
+            });
+
+            $("#btn2").click(function () {
+                $("p").text("This is demo text.")
+            });
+        });
+    </script>
+</body>
+
+</html> -->
+
+
+<!-- Write a Jquery to get and set HTML contents of the elements.  -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get & Set HTML Contents</title>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <button id="btn1">Get Paragraph's HTML Contents</button>
+    <p>Welcome Armaan in <b>jQuery Programming</b></p>
+    <button id="btn2">Write Message!</button>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                var data = $("p").html();
+                alert(data);
+            });
+
+            $("#btn2").click(function () {
+                $("body").html("<h1>Hello World!</h1>")
+            });
+        });
+    </script>
+</body>
+
+</html> -->
+
+
+<!-- Write a Jquery to get and set value of attribute of an element. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get & Set Value of attribute of an element.</title>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <button id="btn1">Get Link's HRFE Attribute</button>
+    <img id="jquery" src="jquery.png" alt="jQuery-Image" height="200px" width="200px"><br><br>
+    <input type="checkbox" name="terms" id="termsAndCon">I agree with terms and conditions. <br><br>
+    <button id="btn2">Check!</button>
+
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                alert($("img#jquery").attr("alt"));
+            });
+
+            $("#btn2").click(function () {
+                $('input[type="checkbox"]').attr("checked", "checked");
+            });
+        });
+    </script>
+</body>
+
+</html> -->
+
+
+<!-- Practical 8.c) 
+Aim: jQuery Insert Content, jQuery Remove Elements and Attribute. 
+I. Write a Jquery to insert HTML elements at the beginning and end of the elements. New One  -->
+
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <script src="jquery.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(".b1").click(function () {
+                $("p").prepend("<strong>Note:</strong> ");
+            });
+
+            $(".b2").click(function () {
+                $("#container").append("This is demo text.<br>");
+            });
+        }); 
+    </script>
+</head>
+
+<body>
+    <button class="b1">Insert Text at Begin</button>
+    <p>welcome in Jquery</p>
+
+    <button class="b2">Insert Text at End</button>  
+    <div id="container">
+        <p>Mulund College of Commerce</p>
+    </div>
+</body>
+
+</html> -->
+
+
+
+<!-- Write a Jquery to insert multiple HTML elements at the beginning and end of the elements.  -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple HTML Elements</title>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <button>Insert Contents</button>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, sequi?</p>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                var newHeading = "<h1>Important Note:</h1>";
+                var newParagraph = document.createElement("p");
+                newParagraph.innerHTML = "<em>Hello World!</em>";
+                $("body").append(newHeading, newParagraph);
+            });
+        });
+    </script>
+</body>
+
+</html> -->
+
+<!-- Write a Jquery to insert multiple HTML elements before and after the elements. -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple HTML Elements before and after the elements</title>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <button id="btn1">Insert Begin!</button>
+    <p>Lorem ipsum dolor sit amet.</p>
+
+    <button id="btn2">Insert End!</button>
+
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                var newHeading = "<h1>Important Note:</h1>";
+                var newParagraph = document.createElement("p");
+                newParagraph.innerHTML = "Lorem ipsum dolor sit amet.";
+                $("p").before(newHeading, newParagraph);
+            });
+
+            $("#btn2").click(function () {
+                var newHeading = "<h1>Important Note:</h1>";
+                var newParagraph = document.createElement("p");
+                newParagraph.innerHTML = "Lorem ipsum dolor sit amet.";
+                $("body").append(newHeading, newParagraph);
+            });
+        });
+    </script>
+</body>
+
+</html> -->
+
+
+<!-- IV. Write a Jquery to remove the contents of the elements. -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove the contents of the elements.</title>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <p>Outside Div Elements</p>
+    <div id="demo">
+        <p>Inside Div Elements</p>
+    </div>
+    <button>Hide the elements inside div</button>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("div#demo").remove();
+            });
+        });
+    </script>
+</body>
+
+</html> -->
+
+<!-- Write a Jquery to remove the parent element of an HTML element from the page.  -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove the parent element</title>
+    <script src="jquery.js"></script>
+</head>
+<style>
+    div {
+        background-color: yellow;
+    }
+
+    article {
+        background-color: pink;
+    }
+</style>
+
+<body>
+    <div>
+        <p>This is a paragraph inside a div elements.</p>
+    </div>
+
+    <article>
+        <p>This is another paragraph inside a article element.</p>
+    </article>
+
+    <button>Remove the parent element of each p element.</button>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("p").unwrap();
+            });
+        });
+    </script>
+</body>
+
+</html> -->
+
+<!-- Write a Jquery to remove an attribute from the HTML elements. -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove an attribute from the HTML elements.</title>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <h1>This is a heading.</h1>
+    <p style="color: red; font-size: 10px;">This is a paragraph</p>
+    <p style="color: blue;">This is a another paragraph</p>
+    <button>Remove the style attribute from all p elements</button>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("p").removeAttr("style");
+            });
+        });
+    </script>
+</body>
+
+</html> -->
+
+<!-- Write a Jquery to set the duration in slide toggle effect. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set the Duration Slide Toggle effect.</title>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <button>Slide Toggle</button>
+    <hr>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis, dicta.</p>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("p").slideToggle();
+            });
+        });
+    </script>
+</body>
+
+</html> -->
+
+<!-- Write a Jquery to remove the HTML elements from the page. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove the HTML elements</title>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <div style="background-color: chartreuse; height: 100px; width: 300px;">
+        This is some text in the div.
+        <p>This is a paragraph in the div.</p>
+        <p>This is another paragraph ini the div.</p>
+    </div><br>
+    <button>Remove div element</button>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("div").remove();
+            });
+        });
+    </script>
+</body>
+
+</html>
