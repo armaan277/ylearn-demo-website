@@ -1,0 +1,81 @@
+Q.1) Creating JSON 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstrate the Stringify() Method!!!</title>
+</head>
+
+<body>
+    <script>
+        const person = {
+            name: "Armaan",
+            age: 20,
+            skills: ["Flutter", "JavaScript", "MongoDB"],
+            isStudent: true,
+            address: {
+                "city": "Mumbai",
+                "zipcode": "400070",
+            }
+        };
+
+        document.writeln(JSON.stringify(person));
+        document.writeln(JSON.stringify(person, (key, value) => {
+            if (key === "isStudent") {
+                return undefined;
+            }
+            return value;
+        }));
+        document.writeln(JSON.stringify(person, ["name", "age", "skills"], 5));
+        console.log(JSON.stringify(person,null,5))
+    </script>
+</body>
+
+</html>
+
+Q.2) Parsing JSON 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var data = '{"name" : "JSON", "sem" : 5, "type" : "programming"}';
+
+        document.writeln("<h1>" + data.name + "<h1><br/>"); // Undefined
+
+        var json_obj = JSON.parse(data, function (name, value) {
+            return value;
+        });
+        document.writeln(json_obj.name); // JSON
+
+
+        for (key in json_obj) {
+            document.write("</br>" + key); // All keys
+        }
+
+        var json_obj = JSON.parse(data, function (name, value) {
+            if (name == "sem") {
+                return undefined;
+            } else {
+                return value;
+            }
+        });
+        document.write(json_obj.type);
+
+        for (key in json_obj) {
+            document.write("<br/>" + key + ": " + json_obj[key]);
+        }
+    </script>
+</body>
+
+</html>
+
+

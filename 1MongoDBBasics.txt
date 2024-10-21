@@ -1,0 +1,38 @@
+Q.1) Write a MongoDB query to create and drop database. 
+
+> use myDatabase
+> show dbs
+> db.createCollection("myDB")
+> show dbs
+> db.dropDatabase()
+> show dbs
+
+Q.2) Write a MongoDB query to create, display and drop collection.
+
+> use Students
+> show dbs
+> db.createCollection("stu")
+> show dbs
+> db.stu.insert({"_id" : 1,"name" : "Armaan", "age" : 20, "city" : "Mumbai"})
+> db.stu.insert({"_id" : 2,"name" : "Meraj", "age" : 19, "city" : "Pune"})
+>  db.stu.find().pretty()
+> db.stu.drop()
+> db.stu.find().pretty()
+> show collections
+
+Q.3) Write a MongoDB query to insert, query, update and delete a document.
+
+> use Students
+> show dbs
+> db.createCollection("stu")
+> show dbs
+> db.stu.insert({"_id" : 1, "name" : "Armaan", "age" : 20, "city" : "Mumbai"})
+> db.stu.insert({"_id" : 2, "name" : "Meraj", "age" : 25, "city" : "Pune"})
+> db.stu.find()
+> db.stu.updateOne({"name" : "Meraj"}, {$set : {"age" : 19}})
+>  db.stu.find()
+> db.stu.deleteOne({"name" : "Armaan"})
+> db.stu.find()
+
+
+

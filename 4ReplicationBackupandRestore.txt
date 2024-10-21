@@ -1,0 +1,51 @@
+Q.1) Write a MongoDB query to create Replica of existing database.
+> create a folder in c drive which contains 4 files rs1 to rs4
+
+> start mongod --port 27020 --dbpath c:\file_name\rs1 --replSet test1
+
+> mongo --port 27020
+
+> cfg1 = {
+"_id":"test1",	
+"members":[
+{"_id":0,"host":"localhost:27020"}
+,{"_id":1,"host":"localhost:27021"}
+,{"_id":2,"host":"localhost:27022"}
+,{"_id":3,"host":"localhost:27023"}
+ ]
+}
+
+> rs.initiate(cfg1)
+
+> use AM
+
+> db.am.insert({"name" : "Armaan", "age" : 20})
+
+_____________________________________________________________________________________________
+2,3,4 cmd window 
+
+> mongo --port 2702_
+> rs.slaveOk()
+
+_____________________________________________________________________________________________
+
+Q.2) Write a MongoDB query to create a backup of existing database.
+> mongodump:- It's creating existing database backup.
+
+> mongodump --db DB_NAME --collection DB_COLLECTION --out path_file_name
+
+_____________________________________________________________________________________________
+
+Q.3) Write a MongoDB query to restore database from the backup.
+> This is used when you are created backup folder, this is backup for import in MongoDB.
+
+> mongorestore backup_folder_path_file --db ANY_DB_NAME
+
+> When we check the our restore backup then we can check in CMD. 
+
+
+
+
+
+
+

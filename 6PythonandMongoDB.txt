@@ -1,0 +1,34 @@
+from pymongo import MongoClient
+Client = MongoClient("localhost:27017")
+db = Client.EmployeeData
+def insert():
+    try:
+        #insert program
+        employeeID = input("Enter Employee Id: ")
+        employeeName = input("Enter Employee Name: ")
+        employeeAge = input("Enter Employee Age: ")
+        employeeCountry = input("Enter Employee Country: ")
+        db.emp.insert_one({
+            "id" : employeeID,
+            "name" : employeeName,
+            "age" : employeeAge,
+            "country" : employeeCountry
+            })      
+        print("Data entered Successfully")
+
+        #Update Data
+        #db.emp.update_one({"age" : "India"}, {"$set" : {"age" : 19}})
+        #print("Data updated successfully")
+
+        #read data
+        #print("Read Data Successfully")
+        #for p in db.emp.find():
+            #print("name ",p["name"])
+        
+
+        #delete data
+        #db.emp.delete_one({"name" : "Rehan"})
+        #print("Delete Data Successfully")
+    except Exception:
+        print(str(e))
+insert()

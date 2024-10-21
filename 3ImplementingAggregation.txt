@@ -1,0 +1,24 @@
+Q.1) Write a MongoDB query to use sum, avg, min and max expression. 
+
+>  use aggregaion
+> show dbs
+> db.createCollection("aggre")
+> show dbs
+> db.aggre.insert({"title" : "MongoDB Overview", "description" : "MongoDB Explaination", "by" : "Armaan", "url" : "www.mongodb.com", tags : ["NoSQL", "MongoDB"], "likes": 100 })
+> db.aggre.insert({"title" : "SPM", "description" : "All About S/W Management", "by" : "Arham", "url" : "www.spm.com", tags : ["Good Projects", "Best Analysis"], "likes": 80 })
+> db.aggre.find().pretty()
+> db.aggre.aggregate([{$group : {"_id" : "$by_user", sum_likes : {"$sum" : "$likes"}}}])
+> db.aggre.aggregate([{$group : {"_id" : "$by_user", avg_likes : {"$avg" : "$likes"}}}])
+> db.aggre.aggregate([{$group : {"_id" : "$by_user", min_likes : {"$min" : "$likes"}}}])
+> db.aggre.aggregate([{$group : {"_id" : "$by_user", sum_likes : {"$max" : "$likes"}}}])
+
+Q.2) Write a MongoDB query to use push and addToSet expression.
+
+> db.aggre.updateOne({"by" : "Armaan"}, {$push : {"tags" : "NoSQL"}})
+> db.aggre.updateOne({"by" : "Armaan"}, {$addToSet : {"tags" : "MongoDB"}})
+> db.aggre.updateOne({"by" : "Armaan"}, {$addToSet : {"tags" : "Node js"}})
+
+Q.3) Write a MongoDB query to use first and last expression.
+
+> db.aggre.aggregate([{$group : {"_id" : "$by_user", first_title : {"$first" : "$title"}}}])
+> db.aggre.aggregate([{$group : {"_id" : "$by_user", last_title : {"$last" : "$title"}}}])

@@ -1,0 +1,149 @@
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.MongoCollection;
+import org.bson.Document;
+
+public class Inserting {
+    public static void main(String[] args) {
+       // Creating a Mongo client using MongoClients
+       // MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017");
+       // System.out.println("Connected to the database successfully");
+
+	// Creating a Mongo client using MongoClients This is ma'am Photo
+	MongoClient mongo = new MongoClient("localhost",27017);
+	System.out.println("Connected to the database successfully");
+
+        // Accessing the database
+        MongoDatabase database = mongoClient.getDatabase("BatchB");
+
+        // Accessing the collection
+        MongoCollection<Document> collection = database.getCollection("S1");
+        System.out.println("Collection sampleCollection1 selected successfully");
+
+        // Creating a document to insert
+        Document document = new Document();
+        document.append("id", 1);
+        document.append("description", "AWP");
+        document.append("likes", 100);
+        document.append("url", "http://www.awp.com");
+        document.append("by", "DOT NET Framework");
+        document.append("project_by", "Nutan");
+
+        // Inserting the document into the collection
+        collection.insertOne(document);
+        System.out.println("Document inserted successfully");
+
+        // Closing the Mongo client connection
+        mongoClient.close();
+    }
+}
+
+
+
+
+
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.MongoCollection;
+import org.bson.Document;
+
+public class Inserting {
+    public static void main(String[] args) {
+       // Creating a Mongo client using MongoClients
+       // MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017");
+       // System.out.println("Connected to the database successfully");
+
+	// Creating a Mongo client using MongoClients This is ma'am Photo
+	MongoClient mongo = new MongoClient("localhost",27017);
+	System.out.println("Connected to the database successfully");
+
+        // Accessing the database
+        MongoDatabase database = mongoClient.getDatabase("BatchB");
+
+        // Accessing the collection
+        MongoCollection<Document> collection = database.getCollection("S1");
+        System.out.println("Collection sampleCollection1 selected successfully");
+
+        // Creating a document to insert
+        Document document = new Document();
+        document.append("id", 1);
+        document.append("description", "AWP");
+        document.append("likes", 100);
+        document.append("url", "http://www.awp.com");
+        document.append("by", "DOT NET Framework");
+        document.append("project_by", "Nutan");
+
+        // Inserting the document into the collection
+        collection.insertOne(document);
+        System.out.println("Document inserted successfully");
+
+        // Closing the Mongo client connection
+        mongoClient.close();
+    }
+}
+
+
+
+
+
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
+import java.util.Iterator;
+import com.mongodb.client.FindIterable;
+
+
+public class Reading {
+	// Creating a Mongo client using MongoClients This is ma'am Photo
+	MongoClient mongo = new MongoClient("localhost",27017);
+	System.out.println("Connected to the database successfully");
+
+        // Accessing the database
+        MongoDatabase database = mongoClient.getDatabase("BatchB");
+
+        // Accessing the collection
+        MongoCollection<Document> collection = database.getCollection("S1");
+        System.out.println("Collection sampleCollection1 selected successfully");
+
+	FindIterable<Document> iterDoc = collection.find();
+	int i = 1;
+	Iterator it = iterDoc.iterator();
+	while(it.hasNext()) {
+		System.out.println(it.next());
+		i++;
+ }
+}
+
+
+
+
+
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.model.Filters;
+import org.bson.Document;
+
+public class Update {
+    public static void main(String[] args) {
+        // Creating a Mongo client
+        try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017")) {
+            System.out.println("Connected to the database successfully");
+
+            // Accessing the database
+            MongoDatabase database = mongoClient.getDatabase("BatchB");
+
+            // Accessing the collection
+            MongoCollection<Document> collection = database.getCollection("S1");
+            System.out.println("Collection S1 selected successfully");
+
+            // Update operation
+            collection.updateOne(Filters.eq("id", 1), new Document("$set", new Document("name", "Updated Name")));
+            System.out.println("Document updated successfully...");
+        }
+    }
+}
